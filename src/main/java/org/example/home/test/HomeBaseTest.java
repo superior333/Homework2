@@ -1,11 +1,9 @@
 package org.example.home.test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.example.home.pages.HomeAlertPage;
-import org.example.home.pages.HomeBasePage;
-import org.example.home.pages.HomeHomePage;
-import org.example.home.pages.HomeTextInputPage;
+import org.example.home.pages.*;
 import org.example.pages.AlertPage;
+import org.example.pages.FileUploadPage;
 import org.example.pages.HomePage;
 import org.example.pages.MouseOverPage;
 import org.openqa.selenium.WebDriver;
@@ -26,6 +24,7 @@ public class HomeBaseTest {
     protected MouseOverPage mouseOverPage = new MouseOverPage(getWebDriver(),getActions());
     protected HomeAlertPage homeAlertPage = new HomeAlertPage(getWebDriver(), getActions());
     protected HomeTextInputPage homeTextInputPage = new HomeTextInputPage(getWebDriver(),getActions());
+    protected HomeFileUploadPage homeFileUploadPage = new HomeFileUploadPage(getWebDriver(), getActions());
 
 
     public static WebDriver driver;
@@ -36,7 +35,7 @@ public class HomeBaseTest {
         driver.get(runProperties.getProperty("baseUrl"));
     }
 
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
     public void closeBrowser(){
         driver.quit();
     }
