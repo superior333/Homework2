@@ -1,5 +1,8 @@
 package org.example.test;
 
+import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.WebDriverRunner;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WindowType;
 import org.testng.annotations.Test;
 
@@ -8,22 +11,25 @@ import java.util.Set;
 public class MultipleWindowsTest extends BaseTest{
 
 
+
     @Test
     public void multipleWindowTest(){
 
-        String playGrHandle = getWebDriver().getWindowHandle();
+        WebDriver driver = WebDriverRunner.getWebDriver();
 
-        getWebDriver().switchTo().newWindow(WindowType.TAB);
+        String playGrHandle = driver.getWindowHandle();
 
-        getWebDriver().get("https://www.google.com/");
+        Selenide.switchTo().newWindow(WindowType.TAB);
 
-        String googleHandle = getWebDriver().getWindowHandle();
+       Selenide.open("https://www.google.com/");
 
-        Set<String> browserTabs = getWebDriver().getWindowHandles();
+        String googleHandle = driver.getWindowHandle();
 
-        getWebDriver().switchTo().window(playGrHandle);
+        Set<String> browserTabs = driver.getWindowHandles();
 
-        getWebDriver().close();
+        Selenide.switchTo().window(playGrHandle);
+
+        Selenide.closeWindow();
 
 //        getWebDriver().switchTo().window("File Upload") ненадежно
 

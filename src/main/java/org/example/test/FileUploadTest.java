@@ -1,5 +1,6 @@
 package org.example.test;
 
+import com.codeborne.selenide.Selenide;
 import org.testng.annotations.Test;
 
 import java.io.File;
@@ -11,10 +12,10 @@ public class FileUploadTest extends BaseTest{
     public void uploadTest(){
         homePage.redirectToSection("File Upload");
 
-        getWebDriver().switchTo().frame(0);
+        Selenide.switchTo().frame(0);
 
         File file = new File("src/main/resources/FileToUpload.txt");
-        fileUploadPage.uploadFile(file.getAbsolutePath());
+        fileUploadPage.uploadFile(file);
 
         System.out.println("test");
     }
