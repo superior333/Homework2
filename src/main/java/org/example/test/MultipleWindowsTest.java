@@ -33,8 +33,6 @@ public class MultipleWindowsTest extends BaseTest{
 
 //        getWebDriver().switchTo().window("File Upload") ненадежно
 
-        System.out.println(browserTabs);
-        System.out.println("Test");
     }
 
 }

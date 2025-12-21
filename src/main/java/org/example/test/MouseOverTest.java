@@ -29,7 +29,6 @@ public class MouseOverTest extends BaseTest{
 
         Assert.assertTrue(actualClickCount == clickCount * 2);
 
-        System.out.println("test");
     }
 
 }

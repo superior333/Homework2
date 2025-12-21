@@ -22,6 +22,7 @@ public class AlertPage extends BasePage {
         Selenide.switchTo().alert().accept();
     }
 
+    @Step("Отклонить алерт")
     public void dismissAlert(){
         Selenide.switchTo().alert().dismiss();
     }

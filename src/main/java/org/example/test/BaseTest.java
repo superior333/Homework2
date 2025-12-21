@@ -1,11 +1,7 @@
 package org.example.test;
 
-
-import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import io.qameta.allure.Allure;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.example.listeners.TestListener;
 import org.example.pages.*;
 
@@ -16,7 +12,6 @@ import java.io.ByteArrayInputStream;
 import java.io.FileInputStream;
 import java.io.IOException;
 
-import java.util.List;
 import java.util.Properties;
 
 
@@ -30,6 +25,7 @@ public abstract class BaseTest {
     protected FileUploadPage fileUploadPage = new FileUploadPage();
     protected DynamicTablePage dynamicTablePage = new DynamicTablePage();
     protected AjaxPage ajaxPage = new AjaxPage();
+    protected SampleAppPage sampleAppPage = new SampleAppPage();
 
 
     @BeforeClass

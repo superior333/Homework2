@@ -17,7 +17,6 @@ public class FileUploadTest extends BaseTest{
         File file = new File("src/main/resources/FileToUpload.txt");
         fileUploadPage.uploadFile(file);
 
-        System.out.println("test");
     }
 
 }
