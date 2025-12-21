@@ -49,14 +49,4 @@ public class SampleAppPage extends BasePage{
         Color colorValueHex = Color.fromString(colorValue);
         return colorValueHex.asHex();
     }
-
-    @BeforeTest
-    public void setUp() {
-        Configuration.reopenBrowserOnFail= false;
-    }
-
-    @AfterTest(alwaysRun = true)
-    public void tearDown() {
-        Selenide.closeWebDriver();
-    }
 }
